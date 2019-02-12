@@ -19,3 +19,16 @@ MARICA-13
 예제 출력 1
 1 3 5
 """
+# fbi들어가있음
+count=0
+a=[]
+for i in range(5):
+    line = input()
+    if line.count('FBI'):
+        a.append(i+1)
+        count+=1
+if count == 0:
+    print("HE GOT AWAY!")
+else:
+    for i in a:
+        print(i,end=" ")
