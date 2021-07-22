@@ -9,14 +9,12 @@ import math
 #         self.left = left
 #         self.right = right
 class Solution:
-    queue = deque([])
-
     def isValidBST(self, root: TreeNode) -> bool:
-        self.queue.append((root, -math.inf, math.inf))
+        queue = deque([])
+        queue.append((root, -math.inf, math.inf))
 
-        while self.queue:
-            node, lower, upper = self.queue.popleft()
-
+        while queue:
+            node, lower, upper = queue.popleft()
             if node is None:
                 continue
 
@@ -24,6 +22,10 @@ class Solution:
             if lower >= node.val or node.val >= upper:
                 return False
 
-            self.queue.append((node.left, lower, val))
-            self.queue.append((node.right, val, upper))
+            queue.append((node.left, lower, val))
+            queue.append((node.right, val, upper))
         return True
+
+
+
+
