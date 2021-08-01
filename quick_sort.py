@@ -27,3 +27,22 @@ def quick_sort(array, start, end):
 quick_sort(array, 0, len(array)-1)
 print(array)
 
+
+def quick_sort(nums):
+    if len(nums) <= 1:
+        return nums
+
+    pivot = nums[len(nums) // 2]
+    left, equal, right = [], [], []
+    for num in nums:
+        if pivot < num:
+            right.append(num)
+        elif pivot > num:
+            left.append(num)
+        else:
+            equal.append(num)
+    return quick_sort(left) + equal + quick_sort(right)
+
+
+print(quick_sort([54, 26, 93, 17, 77, 31, 44, 55, 20]))
+
