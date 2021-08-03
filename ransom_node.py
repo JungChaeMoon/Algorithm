@@ -9,5 +9,5 @@ def check_magazine(magazine, note):
     return 'Yes'
 
 
-print(check_magazine('ive got a lovely bunch of coconuts',
-'ive got some coconuts'))
+print(check_magazine('give me one grand today night',
+'give one grand today'))
